@@ -129,6 +129,7 @@ dmypy.json
 .pyre/
 
 # Project ignores
-dailyEmail/tokens.py
-dailyEmail/saved-data/
 .vscode
+*.zip
+
+
