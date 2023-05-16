@@ -9,6 +9,8 @@ zip -r notion-random-quote-of-the-day.zip * -x ".git/*" "venv/*" "*/__pycache__/
 
 ## Running locally
 
+Uncomment first two lines of main.py
+
 ```
 python main.py
 ```
