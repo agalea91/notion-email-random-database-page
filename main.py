@@ -4,9 +4,9 @@
 
 
 def run(_):
-    from random_quote_of_the_day import send_random_quote
+    from random_db_entry import send_random_entry
 
-    send_random_quote()
+    send_random_entry()
 
 
 if __name__ == "__main__":
