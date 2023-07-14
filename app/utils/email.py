@@ -1,7 +1,7 @@
 import os
 
 
-DB_TYPE = os.getenv("DB_TYPE")
+DB_TYPE = os.getenv("NOTION_DATABASE_TYPE")
 
 
 def quote_html(quote, author):
@@ -15,7 +15,7 @@ def quote_html(quote, author):
 """
 
 
-def pretty_quote_html(quote, author):
+def pretty_quote_html(quote, author, **kwargs):
     return f"""
     <figure style='margin: 0; background: #eee; padding: 1em; border-radius: 1em;'>
         <blockquote style='margin: 1em;'>
@@ -28,9 +28,11 @@ def pretty_quote_html(quote, author):
     """
 
 
-def recipe_html(text):
+def recipe_html(recipe, page_url, page_name, **kwargs):
     return f"""
-    <p>{text}</p>
+    <h2>{page_name}</h2>
+    <p>{recipe}</p>
+    <p><a href={page_url}>Link to recipe in Notion</p>
     """
 
 
@@ -40,11 +42,11 @@ inner_html = {
 }
 
 
-def construct_html_msg(**parsed_page_content):
+def construct_html_msg(**kwargs):
     html_template = f"""\
 <html>
     <body style='margin: 1em; font: 1.2rem/1.4 Georgia, serif;'>
-        {inner_html[DB_TYPE](**parsed_page_content)}
+        {inner_html[DB_TYPE](**kwargs)}
     </body>
 </html>
 """
@@ -52,4 +54,4 @@ def construct_html_msg(**parsed_page_content):
 
 
 def get_email_subject(topic):
-    return f"Your Daily {topic.capitalize()} {DB_TYPE.capitalize()}"
+    return f"Your daily {topic} {DB_TYPE}"

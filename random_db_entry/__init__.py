@@ -1,1 +1,0 @@
-from random_quote_of_the_day.main import send_random_quote

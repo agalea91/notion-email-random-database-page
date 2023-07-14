@@ -4,9 +4,9 @@
 
 
 def run(_):
-    from random_db_entry import send_random_entry
+    from app import email_random_database_page
 
-    send_random_entry()
+    email_random_database_page()
 
 
 if __name__ == "__main__":
