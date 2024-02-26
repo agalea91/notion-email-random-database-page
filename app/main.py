@@ -13,7 +13,7 @@ def _check_databse_type():
     db_type = os.getenv("NOTION_DATABASE_TYPE")
     if not db_type:
         raise ValueError("Must set NOTION_DATABASE_TYPE env variable")
-    if db_type not in ("quote", "recipe"):
+    if db_type not in ("quote", "recipe", "note"):
         raise NotImplementedError
 
 

@@ -35,10 +35,18 @@ def recipe_html(recipe, page_url, page_name, **kwargs):
     <p><a href={page_url}>Link to recipe in Notion</p>
     """
 
+def note_html(note, page_url, page_name, **kwargs):
+    return f"""
+    <h2>{page_name}</h2>
+    <p>{note}</p>
+    <p><a href={page_url}>Link to note in Notion</p>
+    """
+
 
 inner_html = {
     "quote": pretty_quote_html,
     "recipe": recipe_html,
+    "note": note_html,
 }
 
 

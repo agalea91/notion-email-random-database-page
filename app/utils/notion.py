@@ -74,10 +74,15 @@ def parse_page_recipe_content(block_page):
     recipe = parse_page_text_content(block_page)["text"]
     return dict(recipe=recipe)
 
+def parse_page_note_content(block_page):
+    note = parse_page_text_content(block_page)["text"]
+    return dict(note=note)
+
 
 content_parser = {
     "quote": parse_page_quote_content,
     "recipe": parse_page_recipe_content,
+    "note": parse_page_note_content,
 }
 
 
